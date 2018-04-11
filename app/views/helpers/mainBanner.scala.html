@@ -1,0 +1,57 @@
+@(showImage: Boolean = false)
+<style>
+.mainHeader {
+background-color: SkyBlue;
+padding-bottom: 100px;
+box-shadow: 0px 1px 10px #888888;
+}
+h1 {
+text-align: left;
+color: white;
+font-size: 500%;
+text-shadow: 1px 1px 30px white;
+}
+.mainContainer {
+padding-left: 0px;
+margin-left: 10px;
+margin-top: 0px;
+height: 200px
+}
+.mainContainerP {
+color: white;
+text-align: left;
+}
+.mainBody {
+padding-top: 200px;
+}
+
+.carousel-item.active {
+display:block;
+}
+</style>
+
+<div class="jumbotron jumbotron-fluid mainHeader">
+    <div class="container-fluid mainContainer">
+        <div class="row">
+            <div class="col">
+                <div id="carouselContent" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item text-center active">
+                            <h1>Macrome garage</h1>
+                            <p class="mainContainerP">A critically acclaimed place to foo bar wizz bang and buzz, come along for more foo and bar and wizz and bangs</p>
+                        </div>
+                        <div class="carousel-item text-center">
+                            <h1>Discounts offered</h1>
+                            <p class="mainContainerP">Get an Mot for 99.99, service for 100.100 and more</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @if(showImage) {
+            <div class="col">
+                <img class="img-thumbnail img-fluid" src='@routes.Assets.at("images/garage.jpg")'>
+            </div>
+            }
+        </div>
+    </div>
+</div>
