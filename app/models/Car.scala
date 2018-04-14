@@ -2,7 +2,8 @@ package models
 
 import play.api.libs.json.Json
 
-case class Car(title:String,
+case class Car(id:Int,
+               title:String,
                description:String,
                mileage:String,
                price:String,

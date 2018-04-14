@@ -3,13 +3,15 @@ package common
 
 import com.google.inject.AbstractModule
 import controllers.{MainController, MainControllerImpl}
+import services.{CarsForSaleService, CarsForSaleServiceImpl}
 
 class BindingModule extends AbstractModule {
   override def configure(): Unit = {
-    bindControllers()
+    bind()
   }
 
-  def bindControllers(): Unit = {
+  def bind(): Unit = {
     bind(classOf[MainController]).to(classOf[MainControllerImpl]).asEagerSingleton()
+    bind(classOf[CarsForSaleService]).to(classOf[CarsForSaleServiceImpl]).asEagerSingleton()
   }
 }
