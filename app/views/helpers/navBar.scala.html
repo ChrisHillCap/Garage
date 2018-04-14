@@ -9,12 +9,12 @@
     <div class="row">
         <div class="col navBar">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link disabled" href="#">Macrome Garage</a>
+                    <a class="nav-link disabled" href="@controllers.routes.MainController.index()">Macrome Garage</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
+                    <a class="nav-link" href="@controllers.routes.MainController.aboutUs()">About us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Our Services</a>
@@ -25,9 +25,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact us</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="@controllers.routes.MainController.aboutUs()">Opening Times</a>
+                </li>
             </ul>
+            <span class="navbar-text" style="font-size:140%">
+      01902 748392
+    </span>
         </nav>
         </div>
+
     </div>
 </div>

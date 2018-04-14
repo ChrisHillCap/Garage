@@ -1,0 +1,24 @@
+@(cars: List[Car] = Nil)
+
+@main("About Us") {
+@helpers.navBar()
+@helpers.mainBanner()
+<div class="container-fluid">
+    <div class="row">
+@for(car <- cars) {
+        <div class="col-6">
+            <div class="card">
+                <img class="card-img-top" src="@car.imgSrc" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-title">@car.title</h3>
+                    <p class="card-text">@car.description</p>
+                    <p class="card-text">£@car.price</p>
+                    <a href="#" class="btn btn-secondary">Click for more details</a>
+                </div>
+            </div>
+        </div>
+}
+    </div>
+</div>
+}
+

@@ -1,0 +1,13 @@
+@(  cardTitleText: String,
+    cardText: String,
+    cardButtonText: String,
+    cardButtonClass: String = "btn-secondary",
+    url: String = "#")
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">@cardTitleText</h3>
+        <p class="card-text">@cardText</p>
+        <a href="@url" class='btn @cardButtonClass'>@cardButtonText</a>
+    </div>
+</div>

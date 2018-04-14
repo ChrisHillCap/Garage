@@ -1,0 +1,27 @@
+@(carForm: Form[Car])(implicit request: RequestHeader, messages: Messages)
+@main("Admin - New Car") {
+
+@helpers.navBar()
+@helpers.mainBanner()
+    <div class="container-fluid">
+@helper.form(action = routes.MainController.submitNewCarForSale(),'enctype -> "multipart/form-data" ) {
+<div class="row">
+    <div class="col">@helper.inputText(carForm("title"))</div>
+    <div class="col">@helper.inputText(carForm("description"))</div>
+    </div>
+       <div class="row">
+           <div class="col">@helper.inputText(carForm("mileage"))</div>
+           <div class="col">@helper.inputText(carForm("price"))</div>
+        </div>
+<div class="row">
+    <div class="col">
+    <label for="mainCarPicture">Upload one Picture of the car</label>
+    <input type="file" id="mainCarPicture" name="mainCarPicture">
+    </div>
+</div>
+    <button class="btn btn-primary" type="submit">Add new Car For Sale</button>
+
+}
+</div>
+
+}

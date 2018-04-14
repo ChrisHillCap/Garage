@@ -2,7 +2,8 @@ package controllers
 
 import org.scalatest.WordSpec
 
-class ApplicationSpec extends WordSpec {
+class MainControllerSpec extends WordSpec {
+
 
   "index" should {
     "return a page" in {
