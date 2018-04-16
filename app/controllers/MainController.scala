@@ -33,7 +33,7 @@ class MainControllerImpl @Inject()(val messagesApi: MessagesApi,
   }
 
   def showCarsForSale: Action[AnyContent] = Action.async { implicit request =>
-    Future.successful(Ok(views.html.carsForSale()))
+    Future.successful(Ok(views.html.carsForSale(carsForSaleService.getCarsForSale)))
   }
 
   //admin

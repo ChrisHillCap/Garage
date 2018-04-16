@@ -22,6 +22,7 @@ object CarForSaleForm {
 
   val form = Form[Car](
     mapping(
+      "id" -> optional(number),
       "title" -> text,
       "description" -> text,
       "mileage" -> text,
