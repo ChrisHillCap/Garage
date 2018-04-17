@@ -18,6 +18,7 @@ libraryDependencies ++= Seq(
   "org.mockito"            %  "mockito-core"       % "2.13.0" % Test
 )
 
-unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
+unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )
+//unmanagedResourceDirectories in Assets <+= baseDirectory (_ / "target/web/uploads")
 
       

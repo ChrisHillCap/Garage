@@ -5,7 +5,7 @@ import models.Car
 import org.scalatest.mockito.MockitoSugar
 import org.scalatestplus.play.PlaySpec
 import play.api.Environment
-import play.api.libs.json.Json
+import play.api.libs.json.{JsObject, Json}
 class CarsForSaleServiceSpec extends PlaySpec with MockitoSugar {
 
   val mockEnv: Environment = mock[Environment]
@@ -27,6 +27,8 @@ class CarsForSaleServiceSpec extends PlaySpec with MockitoSugar {
           |   }
           | ]
         """.stripMargin).toString
+
+      override def overWriteFile(list: List[JsObject]): String = "foo"
     }
   }
 
@@ -39,6 +41,13 @@ class CarsForSaleServiceSpec extends PlaySpec with MockitoSugar {
           res mustBe carJsList
         }
       }
+  "deleteCar" should {
+    "remove and write the list of cars to cars.json" in new Setup {
+      val res = carsForSaleService.deleteCar(1)
+      res mustBe "foo"
+    }
+
+  }
 
     }
 

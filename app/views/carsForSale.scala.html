@@ -1,14 +1,17 @@
 @(cars: List[Car] = Nil)
 
+@fPath(car: Car) = @{s"/uploads?path=car_${car.id.get}/mainPicture.jpg"}
+
 @main("About Us") {
 @helpers.navBar()
 @helpers.mainBanner()
+
 <div class="container-fluid">
     <div class="row">
 @for(car <- cars) {
         <div class="col-6">
             <div class="card">
-                <img class="card-img-top" src="@car.imgSrc" alt="Card image cap">
+                <img class="card-img-top" src='@fPath(car)' alt="Card image cap">
                 <div class="card-body">
                     <h3 class="card-title">@car.title</h3>
                     <p class="card-text">@car.description</p>

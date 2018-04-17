@@ -1,7 +1,5 @@
 package controllers
 
-import java.io.File
-
 import forms.CarForSaleForm
 import javax.inject.Inject
 import play.api.Environment
@@ -10,9 +8,6 @@ import play.api.mvc._
 import services.CarsForSaleService
 
 import scala.concurrent.Future
-
-
-
 
 
 class MainControllerImpl @Inject()(val messagesApi: MessagesApi,
@@ -46,5 +41,9 @@ class MainControllerImpl @Inject()(val messagesApi: MessagesApi,
         success => { carsForSaleService.addCarForSale(success)
           Future.successful(Ok(views.html.index("foo")))
         })
+    }
+    def deleteCar(id:Int): Action[AnyContent] = Action.async{ implicit request =>
+      carsForSaleService.deleteCar(id)
+      Future.successful(Ok(views.html.index(s"Car id: $id deleted")))
     }
   }
